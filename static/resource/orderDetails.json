@@ -1,0 +1,309 @@
+[
+    {
+        "orderStep": 0,
+        "number": "001",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 99,
+                        "price": 60,
+                        "drinkTotal": 0
+                    },
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": false,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 59,
+                        "price": 70,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    },
+    {
+        "orderStep": 0,
+        "number": "002",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": "9",
+                        "price": "60",
+                        "drinkTotal": 0
+                    },
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 9,
+                        "price": 60,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    },
+    {
+        "orderStep": 0,
+        "number": "003",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 69,
+                        "price": 60,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    },
+    {
+        "orderStep": 0,
+        "number": "004",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 10,
+                        "price": 60,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    },
+    {
+        "orderStep": 1,
+        "number": "005",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 39,
+                        "price": 60,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    },
+    {
+        "orderStep": 2,
+        "number": "006",
+        "shop": [
+            {
+                "shopName": "滴妹好棒棒",
+                "shopLink": "/drinkShop",
+                "saleText": "飲品優惠，低消100折$30",
+                "drink": [
+                    {
+                        "name": "東方不敗",
+                        "ratingStatus": true,
+                        "photo": "",
+                        "content": [
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆",
+                            "粉圓",
+                            "布丁",
+                            "紅豆"
+                        ],
+                        "detail": [
+                            {
+                                "temp": "冷飲",
+                                "size": "中杯",
+                                "sugar": "三分糖",
+                                "ice": "微冰"
+                            }
+                        ],
+                        "qty": 79,
+                        "price": 60,
+                        "drinkTotal": 0
+                    }
+                ],
+                "salePrice": "345",
+                "shopTotal": 0
+            }
+        ],
+        "total": 0
+    }
+]

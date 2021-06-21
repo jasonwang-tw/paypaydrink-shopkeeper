@@ -1,0 +1,140 @@
+[
+    {
+        "orderStep": 0,
+        "orderNumber": "001",
+        "status": [
+            {
+                "name": "直接領取",
+                "qrcode": "",
+                "shareLink": ""
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "297",
+        "shop": [
+            {
+                "name": "配配飲 一號店",
+                "address": "台北市大安區仁愛路四段345巷6弄78號",
+                "tel": "02-2456-7891",
+                "time": "24H 全年無休",
+                "map": "/"
+            }
+        ]
+    },
+    {
+        "orderStep": 0,
+        "orderNumber": "002",
+        "status": [
+            {
+                "name": "寄杯兌換",
+                "qrcode": "",
+                "shareLink": ""
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "0",
+        "shop": [
+            {
+                "name": "配配飲 一號店",
+                "address": "台北市大安區仁愛路四段345巷6弄78號",
+                "tel": "02-2456-7891",
+                "time": "24H 全年無休",
+                "map": "/"
+            }
+        ]
+    },
+    {
+        "orderStep": 0,
+        "orderNumber": "003",
+        "status": [
+            {
+                "name": "寄杯",
+                "qrcode": "",
+                "shareLink": ""
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "0",
+        "shop": [
+            {
+                "name": "",
+                "address": "",
+                "tel": "",
+                "time": "",
+                "map": ""
+            }
+        ]
+    },
+    {
+        "orderStep": 0,
+        "orderNumber": "004",
+        "status": [
+            {
+                "name": "送禮",
+                "qrcode": "",
+                "shareLink": "/"
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "0",
+        "shop": [
+            {
+                "name": "",
+                "address": "",
+                "tel": "",
+                "time": "",
+                "map": ""
+            }
+        ]
+    },
+    {
+        "orderStep": 1,
+        "orderNumber": "005",
+        "status": [
+            {
+                "name": "送禮",
+                "qrcode": "",
+                "shareLink": "/"
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "123",
+        "shop": [
+            {
+                "name": "",
+                "address": "",
+                "tel": "",
+                "time": "",
+                "map": ""
+            }
+        ]
+    },
+    {
+        "orderStep": 2,
+        "orderNumber": "006",
+        "status": [
+            {
+                "name": "送禮",
+                "qrcode": "",
+                "shareLink": "/"
+            }
+        ],
+        "orderTime": "2020-12-06",
+        "pay": "信用卡",
+        "cash": "7575",
+        "shop": [
+            {
+                "name": "",
+                "address": "",
+                "tel": "",
+                "time": "",
+                "map": ""
+            }
+        ]
+    }
+]

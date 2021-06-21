@@ -1,0 +1,232 @@
+:root {
+  --color-main-100: #012e68;
+  --color-main-500: #070150;
+  --color-subyellow: #f39519;
+  --color-subyellow-hover: rgba(251, 191, 36, 1);
+  --color-line: #cecccc;
+  --color-blue-100: #57c4e5;
+  --color-blue-500: #06a2d1;
+  --color-blue-900: #336699;
+  --color-lightblue-bg: #f3f8ff;
+  --color-lightblue-placeholder: #afc8e96e;
+  --color-lightblue-high: #d9e9fe;
+  --color-lightblue: #afc8e9;
+  --color-focus: #57c4e540;
+  --color-error: #e23618;
+  --color-error-outline: #e2361836;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply mb-4 text-4xl font-semibold;
+  }
+  h2 {
+    @apply mb-4 text-3xl font-semibold;
+  }
+  h3 {
+    @apply mb-4 text-2xl font-semibold;
+  }
+  h4 {
+    @apply mb-4 text-xl font-semibold;
+  }
+  h5 {
+    @apply mb-4 text-lg font-semibold;
+  }
+  h6 {
+    @apply mb-4 text-sm font-semibold;
+  }
+  td {
+    @apply px-4 py-2 border-lightblue-high;
+  }
+  big {
+    @apply text-lg;
+  }
+  small {
+    @apply text-xs;
+  }
+  a {
+    @apply underline duration-200;
+  }
+  strong {
+  }
+  ul,
+  ol {
+    @apply pl-5;
+    list-style-type: inherit;
+  }
+  select,
+  input:not([type='radio']):not([type='checkbox']),
+  textarea {
+    @apply w-full px-4 py-2 duration-200 bg-white border rounded-lg appearance-none border-lightblue-high text-main-500;
+    height: 42px;
+  }
+  input {
+    @apply placeholder-lightblue-500;
+  }
+  button {
+    @apply w-full px-4 py-2 font-light duration-200 rounded-lg;
+  }
+  ::placeholder {
+    @apply font-light;
+  }
+  p {
+    @apply mb-2 text-base leading-6;
+  }
+  hr {
+    @apply my-5 border-lightblue-high;
+  }
+}
+@layer components {
+}
+@layer utilities {
+  .btn-border-light-blue {
+    @apply px-4 py-2 text-blue-100 no-underline duration-200 bg-white border border-blue-100 rounded-lg cursor-pointer hover:text-main-100 hover:border-main-100;
+  }
+  .btn-border-light-blue-sm {
+    @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-blue-100 border-blue-100 border py-1 px-2.5 rounded-lg no-underline cursor-pointer;
+  }
+  .btn-border-light-blue-lightblue-sm {
+    @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-lightblue-500 border-lightblue-high border py-1 px-2.5 rounded-lg no-underline cursor-pointer;
+  }
+  .btn-border-dark-blue {
+    @apply px-4 py-2 no-underline duration-200 bg-white border rounded-lg cursor-pointer hover:text-blue-100 hover:border-blue-100 text-main-100 border-main-100;
+  }
+  .btn-light-blue {
+    @apply px-4 py-2 text-white no-underline duration-200 bg-blue-100 rounded-lg cursor-pointer hover:bg-blue-500;
+  }
+  .btn-dark-blue {
+    @apply px-4 py-2 text-white no-underline duration-200 rounded-lg cursor-pointer bg-main-500 hover:bg-main-100;
+  }
+  .btn-dark-blue-sm {
+    @apply text-white bg-main-500 hover:bg-main-100 py-1 px-2.5 rounded-lg no-underline cursor-pointer duration-200;
+  }
+  .btn-dark-blue-sm-nohover {
+    @apply text-white bg-main-500 py-1 px-2.5 rounded-lg no-underline duration-200;
+  }
+  .btn-remove {
+    @apply px-4 py-2 text-white no-underline duration-200 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700;
+  }
+  .btn-remove-sm {
+    @apply text-white bg-red-500 hover:bg-red-700 py-1 px-2.5 rounded-lg no-underline cursor-pointer duration-200;
+  }
+  .btn-border-remove {
+    @apply px-4 py-2 text-red-500 no-underline duration-200 bg-white border border-red-500 rounded-lg cursor-pointer hover:text-red-700 hover:border-red-700;
+  }
+  .btn-border-remove-sm {
+    @apply bg-white hover:text-red-700 hover:border-red-700 duration-200 text-red-500 border-red-500 border py-1 px-2.5 rounded-lg no-underline cursor-pointer;
+  }
+  .btn {
+    @apply px-4 py-2 duration-200 rounded-lg;
+  }
+  .btn-sm {
+    @apply duration-200 py-1 px-2.5 rounded-lg;
+  }
+  .line {
+    @apply border-lightblue-high;
+  }
+  .coin-icon {
+    @apply w-8 h-8 bg-subyellow-100 rounded-full flex items-center justify-center text-white mr-3 font-semibold;
+  }
+  .center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .beforeIcon:before,
+  .afterIcon:after {
+    font-family: 'paypaydrink' !important;
+    display: inline-block;
+    transform: translateY(1px);
+  }
+  .beforeIcon:before {
+    margin-right: 10px;
+  }
+  .afterIcon:after {
+    margin-left: 10px;
+  }
+  .inputError {
+    border-color: var(--color-error) !important;
+  }
+  .inputError:focus {
+    box-shadow: 0 0 1px 0.2rem var(--color-error-outline);
+  }
+  .error {
+    color: var(--color-error);
+    font-size: 0.75rem;
+  }
+  .etc {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .bgCover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .bgContain {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap'); */
+
+html,
+body {
+  /* serve */
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  /* padding: 0;
+  margin: 0; */
+}
+input[type='radio'].round + label.round {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-lightblue);
+}
+input[type='radio'].round + label.round i {
+  display: none;
+  font-size: 0.25rem;
+  color: white;
+}
+input[type='radio'].round:checked + label.round {
+  border-color: var(--color-lightblue);
+  background-color: var(--color-lightblue);
+}
+input[type='radio'].round:checked + label.round i {
+  display: block;
+}
+select:focus,
+input:focus,
+textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 1px 0.2rem var(--color-focus);
+}
+::placeholder {
+  font-weight: 300;
+}
+select {
+  background-image: url(../assets/images/selectDownArrow.svg);
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+  background-position: calc(100% - 15px) center;
+}
+strong {
+  font-weight: bold;
+}
+big {
+  font-size: 1.5rem;
+}
+textarea::placeholder {
+  color: var(--color-lightblue);
+}
