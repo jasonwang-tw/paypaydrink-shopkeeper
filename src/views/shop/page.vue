@@ -108,13 +108,15 @@
               name: '今年',
               type: 'bar',
               data: [10, 70, 100, 60, 80, 470, 320, 230, 550, 50, 30, 160],
-              color: ['#012e68']
+              color: ['#012e68'],
+              showBackground: true
             },
             {
               name: '去年',
               type: 'bar',
               data: [106, 701, 150, 620, 480, 270, 380, 280, 450, 57, 350, 120],
-              color: ['#f39519']
+              color: ['#f39519'],
+              showBackground: true
             }
           ]
         })
