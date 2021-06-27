@@ -1,20 +1,26 @@
 <template>
-  <div id="home" class="text-main-500">
+  <div id="home" class="text-main-500 h-full">
     <topmenu />
-    <div class="grid grid-cols-12 gap-5 p-5">
-      <div class="col-span-2">
+    <div class="adminUi grid grid-cols-12">
+      <div class="col-span-2 border-r border-lightblue-high">
         <ul class="list-none pl-0">
-          <li class="border border-lightblue-high rounded-xl p-5 mb-5 shopList active">
-            <router-link to="/shop_1">
-              <h4>SHOP1</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
+          <li
+            class="p-5 shopList border-b border-lightblue-high"
+            v-for="(s, index) in shop"
+            :class="{ active: shopActive === index }"
+            @click="shopActive = index"
+          >
+            <router-link to="/shop_1" class="no-underline">
+              <h4><i class="bi bi-shop mr-3 text-subyellow-100"></i>{{ s.name }}</h4>
+              <ul class="pl-0 text-blue-500">
+                <li>{{ s.add }}</li>
+                <li>{{ s.tel }}</li>
+              </ul>
             </router-link>
           </li>
         </ul>
       </div>
-      <div class="col-span-10 rounded-xl">
+      <div class="col-span-10 bg-lightblue-bg p-10">
         <router-view></router-view>
       </div>
     </div>
@@ -30,7 +36,26 @@
       topmenu
     },
     data() {
-      return {}
+      return {
+        shopActive: 0,
+        shop: [
+          {
+            name: '古亭shop',
+            add: '台北市古亭區許昌街216號',
+            tel: '02-78548977'
+          },
+          {
+            name: '中正shop',
+            add: '台北市中正區許昌街216號',
+            tel: '02-78548977'
+          },
+          {
+            name: '信義shop',
+            add: '台北市信義區區許昌街216號',
+            tel: '02-78548977'
+          }
+        ]
+      }
     }
   }
 </script>
@@ -38,5 +63,8 @@
 <style lang="scss" scoped>
   .shopList.active {
     background-color: var(--color-lightblue-bg);
+  }
+  .adminUi {
+    height: calc(100% - 64px);
   }
 </style>
