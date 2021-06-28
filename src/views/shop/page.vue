@@ -33,11 +33,11 @@
   // 引入基本模板,按需載入
   let echarts = require('echarts/lib/echarts')
   // 引入柱狀圖
-  require('echarts/lib/chart/bar')
+  // require('echarts/lib/chart/bar')
   // 引入柱狀圖
-  require('echarts/lib/chart/pie')
-  require('echarts/lib/component/tooltip')
-  require('echarts/lib/component/title')
+  // require('echarts/lib/chart/pie')
+  // require('echarts/lib/component/tooltip')
+  // require('echarts/lib/component/title')
 
   export default {
     name: 'home',
