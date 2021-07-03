@@ -1,27 +1,78 @@
 <template>
   <div id="shopPage">
-    <h2><i class="bi bi-shop mr-3 text-subyellow-100"></i>古亭shop</h2>
-    <span class="text-blue-500 text-sm">資料更新: 2020/6/22 16:32</span>
-    <hr />
+    <h2><i class="bi bi-house-fill mr-3 text-subyellow-100"></i>古亭shop</h2>
+    <span class="text-blue-900 text-sm block mb-10">資料更新: 2020/6/22 16:32</span>
     <div class="grid grid-cols-12 gap-10">
-      <div class="charts col-span-6">
+      <div class="charts col-span-6 border-lightblue-high border">
         <div id="barGraph" style="height: 350px;"></div>
       </div>
-      <div class="charts col-span-6">
+      <div class="charts col-span-6 border-lightblue-high border">
         <div id="pieGraph" style="height: 350px;"></div>
       </div>
     </div>
-    <div class="mt-10 bg-white p-5 rounded-xl">
+    <div class="mt-10 mb-5 flex items-center">
+      <h3 class="flex-shrink-0 mb-0 mr-5">績效</h3>
+      <div class="border-t border-lightblue-high w-full"></div>
+    </div>
+    <div class="flex">
+      <div class="w-1/3 flex items-center border-r border-lightblue-high mr-10">
+        <h5 class="mr-5 text-blue-900 mb-0">目前顯示</h5>
+        <h3 class="mb-0">近30天</h3>
+      </div>
       <div class="w-1/2">
-        <h4>日期範圍</h4>
+        <h5 class="text-blue-900">自訂篩選日期</h5>
         <div class="flex items-center">
           <input type="date" name="" id="" /><span class="px-5">~</span>
           <input type="date" name="" id="" />
-          <button type="submit" class="bg-main-100 text-white w-1/5 ml-5">送出</button>
+          <button type="submit" class="bg-main-500 text-white w-1/6 ml-5 flex-shrink-0">
+            篩選
+          </button>
         </div>
       </div>
-      <ul class="flex pl-0 list-none">
-        <li v-for="(o, index) in order_detail" class="py-5 px-7">{{ o }}</li>
+    </div>
+    <ul class="orderTitle list-none pl-0 flex mt-10">
+      <li
+        v-for="(o, index) in order_title"
+        class="btn-border-light-blue mr-5"
+        :class="{ active: order_active === index }"
+        @click="order_active = index"
+      >
+        {{ o }}
+      </li>
+    </ul>
+    <div class="my-10">
+      <h4 class="mb-0 flex">
+        <div class="mr-10">
+          訂單共 <span class="text-blue-900">{{ order.length }}</span> 筆
+        </div>
+        <div>
+          銷售淨額 <span v-for="(os, index) in order"> $ {{ os.price }}</span>
+        </div>
+      </h4>
+    </div>
+    <div class=" bg-white p-5 border-lightblue-high border rounded-lg">
+      <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+        <li v-for="(od, index) in order_detailname" :class="od.col">{{ od.name }}</li>
+      </ul>
+      <hr />
+      <ul
+        v-for="(o, index) in order"
+        class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+      >
+        <li class="col-span-1">{{ o.data }}</li>
+        <li class="col-span-1">{{ o.number }}</li>
+        <li v-if="o.status === '完成'" class="col-span-1">
+          <span class="btn-dark-blue-sm text-sm">{{ o.status }}</span>
+        </li>
+        <li v-else-if="o.status === '取消'" class="col-span-1">
+          <span class="btn-remove-sm text-sm">{{ o.status }}</span>
+        </li>
+        <li class="col-span-2">{{ o.user }}</li>
+        <li class="col-span-3">
+          <span v-for="(od, index) in o.drink">{{ od }}、</span>
+        </li>
+        <li class="col-span-2">{{ o.code }}</li>
+        <li class="col-span-2">$ {{ o.price }}</li>
       </ul>
     </div>
   </div>
@@ -46,7 +97,58 @@
     },
     data() {
       return {
-        order_detail: ['銷售總計', '銷售淨額', '訂單', '售出飲品']
+        order_active: 0,
+        order_title: ['銷售總計', '銷售淨額', '訂單', '售出飲品'],
+        order_detailname: [
+          {
+            name: '訂單日期',
+            col: 'col-span-1'
+          },
+          {
+            name: '訂單號碼',
+            col: 'col-span-1'
+          },
+          {
+            name: '訂單狀態',
+            col: 'col-span-1'
+          },
+          {
+            name: '顧客',
+            col: 'col-span-2'
+          },
+          {
+            name: '售出項目',
+            col: 'col-span-3'
+          },
+          {
+            name: '優惠碼',
+            col: 'col-span-2'
+          },
+          {
+            name: '銷售淨額',
+            col: 'col-span-2'
+          }
+        ],
+        order: [
+          {
+            data: '2021/06/22',
+            number: '87554588',
+            user: 'bob',
+            status: '完成',
+            drink: ['紅茶', '烏龍茶', '珍珠奶茶'],
+            code: 'vip888',
+            price: '800'
+          },
+          {
+            data: '2021/06/22',
+            number: '87554588',
+            user: 'bob',
+            status: '取消',
+            drink: ['紅茶', '烏龍茶', '珍珠奶茶'],
+            code: 'vip888',
+            price: '0'
+          }
+        ]
       }
     },
     mounted() {
@@ -170,6 +272,11 @@
   .charts {
     padding: 2rem;
     background-color: white;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
+  }
+  .orderTitle .active {
+    color: white;
+    border-color: var(--color-main-500);
+    background-color: var(--color-main-500);
   }
 </style>
