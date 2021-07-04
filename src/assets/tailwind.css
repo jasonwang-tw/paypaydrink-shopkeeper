@@ -93,7 +93,7 @@
     @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-lightblue-500 border-lightblue-high border py-1 px-2.5 rounded-lg no-underline cursor-pointer;
   }
   .btn-border-dark-blue {
-    @apply px-4 py-2 no-underline duration-200 bg-white border rounded-lg cursor-pointer hover:text-blue-100 hover:border-blue-100 text-main-100 border-main-100;
+    @apply px-4 py-2 no-underline duration-200 bg-white border rounded-lg cursor-pointer hover:text-blue-100 hover:border-blue-100 text-main-100 border-main-100 text-white;
   }
   .btn-light-blue {
     @apply px-4 py-2 text-white no-underline duration-200 bg-blue-100 rounded-lg cursor-pointer hover:bg-blue-500;
@@ -230,4 +230,10 @@ big {
 textarea::placeholder {
   color: var(--color-lightblue);
 }
+a:-webkit-any-link {
+  color: var(--color-main-100);
+}
 
+a:-webkit-any-link:active {
+  color: var(--color-main-100);
+}
