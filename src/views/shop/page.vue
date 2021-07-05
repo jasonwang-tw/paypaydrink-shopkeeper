@@ -139,6 +139,54 @@
         </ul>
       </div>
     </div>
+    <!-- 銷售產品 -->
+    <div class="products" :class="{ hidden: dataTab.products }">
+      <div class="mt-10 mb-5 bg-white p-5 border-lightblue-high border rounded-lg">
+        <div class="mb-0 flex text-lg">
+          <div class="mr-5 font-semibold">總計</div>
+          <div class="mr-5 border-r border-lightblue-high pr-5">
+            商品 <span class="text-subyellow-500">{{ products.length }}</span>
+          </div>
+          <div class="mr-5 border-r border-lightblue-high pr-5">
+            售出
+            <span class="text-subyellow-500 ml-3">{{ products_quantity }}</span>
+          </div>
+          <div class="mr-5 border-r border-lightblue-high pr-5">
+            銷售額
+            <span class="text-subyellow-500 ml-3">$ {{ products_income }}</span>
+          </div>
+          <div class="mr-5 border-r border-lightblue-high pr-5">
+            訂單 <span class="text-subyellow-500 ml-3">{{ products_order }}</span>
+          </div>
+        </div>
+      </div>
+      <div class=" bg-white p-5 border-lightblue-high border rounded-lg">
+        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+          <li v-for="(sd, index) in products_detailname" :class="sd.col">{{ sd.name }}</li>
+        </ul>
+        <hr />
+        <ul
+          v-for="(s, index) in products"
+          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+        >
+          <li class="col-span-4">{{ s.name }}</li>
+          <li class="col-span-2">{{ s.quantity }}</li>
+          <li class="col-span-2">$ {{ s.income }}</li>
+          <li class="col-span-2">{{ s.order }}</li>
+          <li v-if="s.statue === '上架中'" class="col-span-1">
+            <span class="btn-dark-blue-sm text-sm">
+              {{ s.statue }}
+            </span>
+          </li>
+          <li v-else-if="s.statue === '補貨中'" class="col-span-1">
+            <span class="btn-remove-sm text-sm">
+              {{ s.statue }}
+            </span>
+          </li>
+          <li class="col-span-1">{{ s.instock }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -166,7 +214,8 @@
         tabActive: 0,
         dataTab: {
           sales: false,
-          order: true
+          order: true,
+          products: true
         },
         sales_detailname: [
           {
@@ -264,6 +313,50 @@
             drink: ['紅茶', '烏龍茶', '珍珠奶茶'],
             discount: 125,
             price: 260
+          }
+        ],
+        products_detailname: [
+          {
+            name: '商品名稱',
+            col: 'col-span-4'
+          },
+          {
+            name: '售出',
+            col: 'col-span-2'
+          },
+          {
+            name: '銷售總額',
+            col: 'col-span-2'
+          },
+          {
+            name: '訂單',
+            col: 'col-span-2'
+          },
+          {
+            name: '狀態',
+            col: 'col-span-1'
+          },
+          {
+            name: '庫存',
+            col: 'col-span-1'
+          }
+        ],
+        products: [
+          {
+            name: '烏龍茶',
+            quantity: 36,
+            income: 5545,
+            order: 335,
+            statue: '補貨中',
+            instock: 0
+          },
+          {
+            name: '珍珠奶茶',
+            quantity: 28,
+            income: 332,
+            order: 35,
+            statue: '上架中',
+            instock: 278
           }
         ]
       }
@@ -382,9 +475,17 @@
       tabActive: {
         handler() {
           if (this.tabActive === 0) {
-            ;(this.dataTab.sales = false), (this.dataTab.order = true)
+            ;(this.dataTab.sales = false),
+              (this.dataTab.order = true),
+              (this.dataTab.products = true)
           } else if (this.tabActive === 1) {
-            ;(this.dataTab.sales = true), (this.dataTab.order = false)
+            ;(this.dataTab.sales = true),
+              (this.dataTab.order = false),
+              (this.dataTab.products = true)
+          } else if (this.tabActive === 2) {
+            ;(this.dataTab.sales = true),
+              (this.dataTab.order = true),
+              (this.dataTab.products = false)
           }
         }
       }
@@ -414,6 +515,21 @@
         return this.order.reduce((a, b) => {
           return a + b.price
         }, 0)
+      },
+      products_quantity() {
+        return this.products.reduce((a, b) => {
+          return a + b.quantity
+        }, 0)
+      },
+      products_income() {
+        return this.products.reduce((a, b) => {
+          return a + b.income
+        }, 0)
+      },
+      products_order() {
+        return this.products.reduce((a, b) => {
+          return a + b.order
+        }, 0)
       }
     },
     mounted() {
@@ -436,5 +552,8 @@
   }
   .btn-dark-blue {
     color: white;
+    &:-webkit-any-link:active {
+      color: white;
+    }
   }
 </style>
