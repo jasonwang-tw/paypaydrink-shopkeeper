@@ -64,10 +64,17 @@
           <div class="mr-5 border-r border-lightblue-high pr-5">
             優惠折扣 <span class="text-subyellow-500 ml-3">$ {{ sales_discount }}</span>
           </div>
-          <div>
+          <div class="mr-5 border-r border-lightblue-high pr-5">
             銷售淨額
             <span class="text-subyellow-500 ml-3"
               >$ {{ sales_income - sales_refund - sales_discount }}</span
+            >
+          </div>
+          <div>
+            預估分潤
+            <span class="text-subyellow-500 ml-3"
+              >$
+              {{ Math.round((sales_income - sales_refund - sales_discount) * 0.3 * 0.025) }}</span
             >
           </div>
         </div>
@@ -81,12 +88,15 @@
           v-for="(s, index) in sales"
           class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
         >
-          <li class="col-span-2">{{ s.data }}</li>
+          <li class="col-span-1">{{ s.data }}</li>
           <li class="col-span-1">{{ s.order_quantity }}</li>
           <li class="col-span-2">$ {{ s.income }}</li>
           <li class="col-span-2">$ {{ s.refund }}</li>
           <li class="col-span-2">$ {{ s.discount }}</li>
-          <li class="col-span-3">$ {{ s.income - s.refund - s.discount }}</li>
+          <li class="col-span-2">$ {{ s.income - s.refund - s.discount }}</li>
+          <li class="col-span-2">
+            $ {{ Math.round((s.income - s.refund - s.discount) * 0.3 * 0.025) }}
+          </li>
         </ul>
       </div>
     </div>
@@ -160,8 +170,8 @@
         },
         sales_detailname: [
           {
-            name: '發布日期',
-            col: 'col-span-2'
+            name: '發佈日期',
+            col: 'col-span-1'
           },
           {
             name: '訂單數量',
@@ -181,14 +191,18 @@
           },
           {
             name: '銷售淨額',
-            col: 'col-span-3'
+            col: 'col-span-2'
+          },
+          {
+            name: '預估分潤',
+            col: 'col-span-2'
           }
         ],
         sales: [
           {
             data: '2021/06/22',
             order_quantity: 3,
-            income: 1045,
+            income: 5545,
             refund: 335,
             discount: 56,
             total: 0
