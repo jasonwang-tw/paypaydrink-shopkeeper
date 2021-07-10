@@ -14,7 +14,9 @@
           </div>
           <ul class="userMenu list-none absolute bg-white shadow-xl rounded-xl right-0 hidden pl-0">
             <li v-for="(u, index) in userMenu" class="px-5 py-2.5 text-center">
-              <router-link to="" class="no-underline hover:text-blue-500">{{ u }}</router-link>
+              <router-link :to="u.link" class="no-underline hover:text-blue-500">{{
+                u.text
+              }}</router-link>
             </li>
           </ul>
         </div>
@@ -29,7 +31,16 @@
     methods: {},
     data() {
       return {
-        userMenu: ['店主基本資料', '登出']
+        userMenu: [
+          {
+            text: '店主基本資料',
+            link: '/profile'
+          },
+          {
+            text: '登出',
+            link: '#'
+          }
+        ]
       }
     }
   }

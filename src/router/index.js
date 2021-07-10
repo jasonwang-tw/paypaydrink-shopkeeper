@@ -8,11 +8,33 @@ const routes = [
   {
     path: '/',
     component: index,
-    redirect: '/shop_1',
+    redirect: '/shop_1/data',
     children: [
       {
         path: 'shop_1',
         component: () => import('../views/shop/page.vue'),
+        redirect: '/data',
+        children: [
+          {
+            path: 'data',
+            component: () => import('../views/shop/data/shop-data.vue'),
+          },
+          {
+            path: 'order',
+            component: () => import('../views/shop/order/shop-order.vue'),
+            redirect: '/shop_1/order/list',
+            children: [
+              {
+                path: 'list',
+                component: () => import('../views/shop/order/list.vue'),
+              },
+              {
+                path: 'detail',
+                component: () => import('../views/shop/order/order-detail.vue'),
+              }
+            ]
+          }
+        ],
       },
       {
         path: 'shop_2',
@@ -20,6 +42,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/profile',
+    component: () => import('../views/profile.vue'),
+  }
 ];
 
 const router = new VueRouter({
