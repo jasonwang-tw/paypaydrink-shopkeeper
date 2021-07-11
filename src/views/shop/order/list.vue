@@ -2,7 +2,8 @@
   <div id="shopList">
     <div class="order">
       <div class="mt-10 mb-5 flex items-center justify-between">
-        <div>
+        <div class="flex items-center">
+          <span class="mr-3">訂單狀態</span>
           <ul class="orderStatus flex list-none pl-0">
             <li
               v-for="(fo, index) in filter_status"
@@ -81,7 +82,7 @@
           {
             data: '2021/06/20',
             number: '87554862',
-            link: '/shop_1/order/detail',
+            link: '/shop_1/order/detail_complate',
             user: 'bJJ',
             status: '完成',
             price: 800
@@ -89,7 +90,7 @@
           {
             data: '2021/06/22',
             number: '87554588',
-            link: '/shop_1/order/detail',
+            link: '/shop_1/order/detail_remove',
             user: 'bob',
             status: '取消',
             price: 0

@@ -29,8 +29,12 @@ const routes = [
                 component: () => import('../views/shop/order/list.vue'),
               },
               {
-                path: 'detail',
-                component: () => import('../views/shop/order/order-detail.vue'),
+                path: 'detail_complate',
+                component: () => import('../views/shop/order/order-detail-complate.vue'),
+              },
+              {
+                path: 'detail_remove',
+                component: () => import('../views/shop/order/order-detail-remove.vue'),
               }
             ]
           }
