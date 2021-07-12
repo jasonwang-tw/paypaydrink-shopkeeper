@@ -24,7 +24,7 @@
           <input type="date" name="" id="" />
           <button
             type="submit"
-            class="bg-main-500 text-white xl:w-1/6 w-1/2 xl:ml-5 flex-shrink-0 mt-5"
+            class="bg-main-500 text-white xl:w-1/6 w-1/2 xl:ml-5 flex-shrink-0 mt-5 xl:mt-0"
           >
             篩選
           </button>
