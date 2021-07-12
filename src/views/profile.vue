@@ -1,11 +1,13 @@
 <template>
   <div id="home" class="text-main-500 h-full">
     <topmenu />
-    <div class="adminUi bg-lightblue-bg pt-10">
+    <div class="adminUi bg-lightblue-bg pt-10 inline-block xl:block">
       <router-link to="/" class="xl:w-1/3 mb-5 no-underline block xl:mx-auto mx-5"
         ><i class="bi bi-chevron-left mr-3"></i>返回</router-link
       >
-      <div class="xl:w-1/3 xl:mx-auto bg-white p-5 rounded-lg border border-lightblue-high mx-5">
+      <div
+        class="xl:w-1/3 xl:mx-auto bg-white p-5 rounded-lg border border-lightblue-high mx-5 mb-20"
+      >
         <h3>店主基本資料</h3>
         <hr />
         <ul class="shop_profile list-none pl-0">
@@ -41,10 +43,10 @@
       class="fixed top-0 left-0 bg-black bg-opacity-20 w-full h-full z-20 flex items-center justify-center"
       :class="{ hidden: password_success_hide }"
     >
-      <div class="bg-white w-1/4 -mt-40 text-center p-10 rounded-lg shadow-lg">
+      <div class="bg-white xl:w-1/4 xl:-mt-40 text-center p-10 rounded-lg shadow-lg">
         <h3>密碼修改成功</h3>
         <p>下次登入請使用新密碼</p>
-        <div class="btn-dark-blue w-1/4 mx-auto mt-10" @click="password_success_hide = true">
+        <div class="btn-dark-blue xl:w-1/4 mx-auto mt-10" @click="password_success_hide = true">
           確認
         </div>
       </div>
@@ -69,9 +71,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .adminUi {
-    height: calc(100% - 64px);
-  }
   .shop_profile {
     li {
       padding: 0.5rem 0;
@@ -80,6 +79,11 @@
         display: inline-block;
         color: var(--color-blue-500);
       }
+    }
+  }
+  @media (min-width: 1280px) {
+    .adminUi {
+      height: calc(100% - 64px);
     }
   }
 </style>
