@@ -2,10 +2,12 @@
   <div id="home" class="text-main-500 h-full">
     <topmenu />
     <div class="adminUi grid grid-cols-12">
-      <div class="col-span-2 border-r border-lightblue-high overflow-y-auto">
-        <ul class="list-none pl-0">
+      <div class=" col-span-12 xl:col-span-2 border-r border-lightblue-high xl:overflow-y-auto">
+        <ul
+          class="list-none pl-0 flex xl:block overflow-x-auto border-b border-lightblue-high xl:border-none"
+        >
           <li
-            class="p-5 shopList border-b border-lightblue-high"
+            class="p-5 shopList xl:border-b border-lightblue-high flex-shrink-0 "
             v-for="(s, index) in shop"
             :class="{ active: shopActive === index }"
             @click="shopActive = index"
@@ -24,7 +26,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-span-10 bg-lightblue-bg p-10">
+      <div class="col-span-12 xl:col-span-10 bg-lightblue-bg px-5 py-10 xl:p-10">
         <div class="container mx-auto">
           <router-view></router-view>
         </div>

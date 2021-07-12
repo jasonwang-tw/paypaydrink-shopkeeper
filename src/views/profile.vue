@@ -2,10 +2,10 @@
   <div id="home" class="text-main-500 h-full">
     <topmenu />
     <div class="adminUi bg-lightblue-bg pt-10">
-      <router-link to="/" class="w-1/3 mb-5 no-underline block mx-auto"
+      <router-link to="/" class="xl:w-1/3 mb-5 no-underline block xl:mx-auto mx-5"
         ><i class="bi bi-chevron-left mr-3"></i>返回</router-link
       >
-      <div class="w-1/3 mx-auto bg-white p-5 rounded-lg border border-lightblue-high">
+      <div class="xl:w-1/3 xl:mx-auto bg-white p-5 rounded-lg border border-lightblue-high mx-5">
         <h3>店主基本資料</h3>
         <hr />
         <ul class="shop_profile list-none pl-0">
@@ -24,7 +24,7 @@
             <input type="text" placeholder="請再輸入新密碼" class="mb-3" />
             <button
               type="submit"
-              class="btn-dark-blue w-1/6"
+              class="btn-dark-blue xl:w-1/6"
               @click="password_success_hide = false"
             >
               送出

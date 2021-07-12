@@ -7,12 +7,19 @@
         <router-link to="/">
           <img src="../assets/images/logo.svg" alt="" class="block" />
         </router-link>
-        <div class="userName relative">
-          <div class="flex items-center">
+        <div
+          class="userName relative"
+          @mouseenter="menuHidden = false"
+          @mouseleave="menuHidden = true"
+        >
+          <div class="flex items-center" @touchstart="menuHidden = !menuHidden">
             <i class="bi bi-person-circle text-2xl mr-3"></i>
             <span>jasonwang , 歡迎回來</span>
           </div>
-          <ul class="userMenu list-none absolute bg-white shadow-xl rounded-xl right-0 hidden pl-0">
+          <ul
+            class="userMenu list-none absolute bg-white shadow-xl rounded-xl right-0 pl-0"
+            :class="{ hidden: menuHidden }"
+          >
             <li v-for="(u, index) in userMenu" class="px-10 py-3 text-center">
               <router-link :to="u.link" class="no-underline hover:text-blue-500">{{
                 u.text
@@ -40,14 +47,11 @@
             text: '登出',
             link: '#'
           }
-        ]
+        ],
+        menuHidden: true
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
-  .userName:hover .userMenu {
-    display: block;
-  }
-</style>
+<style lang="scss" scoped></style>

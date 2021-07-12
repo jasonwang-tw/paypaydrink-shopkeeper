@@ -1,28 +1,31 @@
 <template>
   <div id="shopData">
-    <div class="grid grid-cols-12 gap-10">
-      <div class="charts col-span-6 border-lightblue-high border">
-        <div id="barGraph" style="height: 350px;"></div>
+    <div class="grid grid-cols-12 gap-10 overflow-hidden">
+      <div class="charts col-span-12 xl:col-span-6 border-lightblue-high border overflow-x-auto">
+        <div id="barGraph" class="w-768 pr-16 xl:pr-0" style="height: 350px;"></div>
       </div>
-      <div class="charts col-span-6 border-lightblue-high border">
-        <div id="pieGraph" style="height: 350px;"></div>
+      <div class="charts col-span-12 xl:col-span-6 border-lightblue-high border overflow-x-auto">
+        <div id="pieGraph" class="w-768" style="height: 350px;"></div>
       </div>
     </div>
     <div class="mt-10 mb-5 flex items-center">
       <h3 class="flex-shrink-0 mb-0 mr-5">績效</h3>
       <div class="border-t border-lightblue-high w-full"></div>
     </div>
-    <div class="flex">
-      <div class="w-1/3 flex items-center border-r border-lightblue-high mr-10">
+    <div class="xl:flex">
+      <div class="xl:w-1/3 flex items-center border-r border-lightblue-high mr-10 mb-10 xl:mb-0">
         <h5 class="mr-5 text-blue-900 mb-0">目前顯示</h5>
         <h3 class="mb-0">近30天</h3>
       </div>
-      <div class="w-1/2">
+      <div class="xl:w-1/2">
         <h5 class="text-blue-900">自訂篩選日期</h5>
-        <div class="flex items-center">
+        <div class="xl:flex items-center">
           <input type="date" name="" id="" /><span class="px-5">~</span>
           <input type="date" name="" id="" />
-          <button type="submit" class="bg-main-500 text-white w-1/6 ml-5 flex-shrink-0">
+          <button
+            type="submit"
+            class="bg-main-500 text-white xl:w-1/6 w-1/2 xl:ml-5 flex-shrink-0 mt-5"
+          >
             篩選
           </button>
         </div>
@@ -41,7 +44,7 @@
     <!-- 銷售總計 -->
     <div class="sales" :class="{ hidden: dataTab.sales }">
       <div class="mt-10 mb-5 bg-white p-5 border-lightblue-high border rounded-lg">
-        <div class="mb-0 flex text-lg">
+        <div class="talbeTitle mb-0 flex text-lg overflow-x-auto">
           <div class="mr-5 font-semibold">總計</div>
           <div class="mr-5 border-r border-lightblue-high pr-5">
             訂單 <span class="text-subyellow-500">{{ sales_order_quantity }}</span> 筆
@@ -70,14 +73,14 @@
           </div>
         </div>
       </div>
-      <div class=" bg-white p-5 border-lightblue-high border rounded-lg">
-        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+      <div class=" bg-white p-5 border-lightblue-high border rounded-lg overflow-x-auto">
+        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500 w-1280">
           <li v-for="(sd, index) in sales_detailname" :class="sd.col">{{ sd.name }}</li>
         </ul>
-        <hr />
+        <hr class="w-1280" />
         <ul
           v-for="(s, index) in sales"
-          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5 w-1280"
         >
           <li class="col-span-1">{{ s.data }}</li>
           <li class="col-span-1">{{ s.order_quantity }}</li>
@@ -94,7 +97,7 @@
     <!-- 訂單 -->
     <div class="order" :class="{ hidden: dataTab.order }">
       <div class="mt-10 mb-5 bg-white p-5 border-lightblue-high border rounded-lg">
-        <div class="mb-0 flex text-lg">
+        <div class="talbeTitle mb-0 flex text-lg">
           <div class="mr-5 font-semibold">總計</div>
           <div class="mr-5 border-r border-lightblue-high pr-5">
             訂單 <span class="text-subyellow-500">{{ order.length }}</span> 筆
@@ -104,14 +107,14 @@
           </div>
         </div>
       </div>
-      <div class=" bg-white p-5 border-lightblue-high border rounded-lg">
-        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+      <div class=" bg-white p-5 border-lightblue-high border rounded-lg overflow-x-auto">
+        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500 w-1280">
           <li v-for="(od, index) in order_detailname" :class="od.col">{{ od.name }}</li>
         </ul>
-        <hr />
+        <hr class="w-1280" />
         <ul
           v-for="(o, index) in order"
-          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5 w-1280"
         >
           <li class="col-span-1">{{ o.data }}</li>
           <li class="col-span-1">{{ o.number }}</li>
@@ -132,8 +135,8 @@
     </div>
     <!-- 銷售產品 -->
     <div class="products" :class="{ hidden: dataTab.products }">
-      <div class="mt-10 mb-5 bg-white p-5 border-lightblue-high border rounded-lg">
-        <div class="mb-0 flex text-lg">
+      <div class="mt-10 mb-5 bg-white p-5 border-lightblue-high border rounded-lg overflow-x-auto">
+        <div class="talbeTitle mb-0 flex text-lg">
           <div class="mr-5 font-semibold">總計</div>
           <div class="mr-5 border-r border-lightblue-high pr-5">
             商品 <span class="text-subyellow-500">{{ products.length }}</span>
@@ -151,14 +154,14 @@
           </div>
         </div>
       </div>
-      <div class=" bg-white p-5 border-lightblue-high border rounded-lg">
-        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+      <div class=" bg-white p-5 border-lightblue-high border rounded-lg overflow-x-auto">
+        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500 w-1280">
           <li v-for="(sd, index) in products_detailname" :class="sd.col">{{ sd.name }}</li>
         </ul>
-        <hr />
+        <hr class="w-1280" />
         <ul
           v-for="(s, index) in products"
-          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5 w-1280"
         >
           <li class="col-span-4">{{ s.name }}</li>
           <li class="col-span-2">{{ s.quantity }}</li>
@@ -388,7 +391,7 @@
           },
           grid: {
             left: '0%',
-            right: '6%',
+            right: '40px',
             bottom: '10%',
             containLabel: true
           },
@@ -536,5 +539,17 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  .talbeTitle > div {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1280px) {
+    .w-1280 {
+      min-width: 1280px;
+    }
+    .w-768 {
+      min-width: 768px;
+    }
   }
 </style>

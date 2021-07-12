@@ -1,7 +1,7 @@
 <template>
   <div id="shopList">
     <div class="order">
-      <div class="mt-10 mb-5 flex items-center justify-between">
+      <div class="mt-10 mb-5 xl:flex items-center justify-between">
         <div class="flex items-center">
           <span class="mr-3">訂單狀態</span>
           <ul class="orderStatus flex list-none pl-0">
@@ -15,19 +15,19 @@
             </li>
           </ul>
         </div>
-        <div class="flex w-1/3">
+        <div class="flex xl:w-1/3 mt-5 xl:mt-0">
           <input type="text" class="mr-3" placeholder="搜尋訂單" />
           <button type="submit" class="btn-dark-blue inline-block w-1/4">搜尋</button>
         </div>
       </div>
-      <div class="bg-white p-5 border-lightblue-high border rounded-lg">
-        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500">
+      <div class="bg-white p-5 border-lightblue-high border rounded-lg overflow-x-auto">
+        <ul class="list-none pl-0 grid grid-cols-12 text-blue-500 w-1280">
           <li v-for="(od, index) in order_detailname" :class="od.col">{{ od.name }}</li>
         </ul>
-        <hr />
+        <hr class="w-1280" />
         <ul
           v-for="(o, index) in filterOrder"
-          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5"
+          class="list-none pl-0 grid grid-cols-12 border-b border-lightblue-high pb-5 mb-5 w-1280"
         >
           <li class="col-span-2">{{ o.data }}</li>
           <li class="col-span-2">
@@ -120,5 +120,10 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  @media (max-width: 1280px) {
+    .w-1280 {
+      min-width: 1280px;
+    }
   }
 </style>
